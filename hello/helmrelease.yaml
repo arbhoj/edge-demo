@@ -25,7 +25,7 @@ spec:
   targetNamespace: edgy
 
 ---
-apiVersion: source.toolkit.fluxcd.io/v1beta1
+apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
   name: edge-demo
