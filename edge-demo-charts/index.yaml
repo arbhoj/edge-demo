@@ -3,12 +3,12 @@ entries:
   edge-demo:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2026-02-11T02:32:15.602984-05:00"
+    created: "2026-02-11T02:44:42.804194-05:00"
     description: A Helm chart for Kubernetes
-    digest: 8906803916c6f55a5dfa62c04a01447515e52b8bb3eaaba37cc597746cf24557
+    digest: 7c845094ddf3233df0abd46caa4d5372326e7f7118e76799e24061bf8012e280
     name: edge-demo
     type: application
     urls:
     - https://raw.githubusercontent.com/arbhoj/edge-demo/main/edge-demo-charts/edge-demo-0.1.0.tgz
     version: 0.1.0
-generated: "2026-02-11T02:32:15.602682-05:00"
+generated: "2026-02-11T02:44:42.803908-05:00"
