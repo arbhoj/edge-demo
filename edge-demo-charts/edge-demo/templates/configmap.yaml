@@ -11,8 +11,5 @@ data:
         </head>
             <body>
                 <h1>{{ include "dynamic.clusterName" . }} Online!!</h1>
-                <div class="imgbox">
-                    <img src="https://raw.githubusercontent.com/arbhoj/edge-demo/refs/heads/main/images/welcome_to_edge_medium.gif">
-                </div>
             </body>
     </html>
