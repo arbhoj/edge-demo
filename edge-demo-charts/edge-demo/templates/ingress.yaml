@@ -2,10 +2,10 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: helloedge-ingress
-  namespace: default
+  namespace: {{ .Release.Namespace }}
   annotations:
     kubernetes.io/ingress.class: kommander-traefik
-    traefik.ingress.kubernetes.io/router.middlewares: kommander-flux-helloedge-stripprefixes@kubernetescrd
+    traefik.ingress.kubernetes.io/router.middlewares: {{ .Release.Namespace }}-helloedge-stripprefixes@kubernetescrd
     traefik.ingress.kubernetes.io/router.tls: "true"
 spec:
   rules:

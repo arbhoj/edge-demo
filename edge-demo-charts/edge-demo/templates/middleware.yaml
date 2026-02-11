@@ -2,7 +2,7 @@ apiVersion: traefik.io/v1alpha1
 kind: Middleware
 metadata:
   name: helloedge-stripprefixes
-  namespace: kommander-flux
+  namespace: {{ .Release.Namespace }}
 spec:
   stripPrefix:
     prefixes:

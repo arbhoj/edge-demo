@@ -4,7 +4,7 @@ metadata:
   labels:
     app: helloedge
   name: helloedge
-  namespace: default
+  namespace: {{ .Release.Namespace }}
 spec:
   ports:
   - port: 80

@@ -2,12 +2,12 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: globalmainpage
-  namespace: default
+  namespace: {{ .Release.Namespace }}
 data:
   index.html: |
     <html>
         <head>
-            <title>Edge-1 Online!!</title>
+            <title>{{ include "dynamic.clusterName" . }} Online!!</title>
             <meta http-equiv="refresh" content="5">
             <style>
                 * {
