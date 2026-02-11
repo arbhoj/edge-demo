@@ -1,15 +1,16 @@
+---
 apiVersion: v1
 kind: ConfigMap
-metadata:
-  name: globalmainpage
-  namespace: {{ .Release.Namespace }}
 data:
   index.html: |
     <html>
         <head>
-            <title>{{ include "dynamic.clusterName" . }} Online!!</title>      
+            <title>{{ include "dynamic.clusterName" . }} Online!!</title>
         </head>
             <body>
                 <h1>{{ include "dynamic.clusterName" . }} Online!!</h1>
             </body>
     </html>
+metadata:
+  name: globalmainpage
+  namespace: {{ .Release.Namespace }}
