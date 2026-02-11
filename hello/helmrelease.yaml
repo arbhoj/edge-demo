@@ -1,0 +1,36 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: edgedemo
+  namespace: ${releaseNamespace}
+spec:
+  chart:
+    spec:
+      chart: edgedemo
+      sourceRef:
+        kind: HelmRepository
+        name: edgedemo
+        namespace: ${releaseNamespace} 
+      version: 0.1.0
+  interval: 15s
+  install:
+    remediation:
+      retries: 30
+    createNamespace: false
+  upgrade:
+    remediation:
+      retries: 30
+  releaseName: edgedemo
+  targetNamespace: ${releaseNamespace}
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: shipdemo
+  namespace: ${releaseNamespace}
+spec:
+  interval: 10m
+  timeout: 1m
+  url: "${helmMirrorURL:=https://raw.githubusercontent.com/arbhoj/edge-demo/main/edge-demo}
