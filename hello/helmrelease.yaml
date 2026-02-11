@@ -2,16 +2,16 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: edgedemo
-  namespace: ${releaseNamespace}
+  name: edge-demo
+  namespace: edgy
 spec:
   chart:
     spec:
-      chart: edgedemo
+      chart: edge-demo
       sourceRef:
         kind: HelmRepository
-        name: edgedemo
-        namespace: ${releaseNamespace} 
+        name: edge-demo
+        namespace: edgy 
       version: 0.1.0
   interval: 15s
   install:
@@ -21,15 +21,15 @@ spec:
   upgrade:
     remediation:
       retries: 30
-  releaseName: edgedemo
-  targetNamespace: ${releaseNamespace}
+  releaseName: edge-demo
+  targetNamespace: edgy
 
 ---
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: HelmRepository
 metadata:
-  name: shipdemo
-  namespace: ${releaseNamespace}
+  name: edge-demo
+  namespace: edgy
 spec:
   interval: 10m
   timeout: 1m
